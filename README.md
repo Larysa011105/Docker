@@ -61,3 +61,78 @@ Affiche les informations générales sur l’environnement Docker (version, nomb
 
 docker [commande] --help
 Affiche l’aide intégrée pour une commande spécifique
+
+
+Jour 2 – Volumes, Réseaux & Inspection
+
+🔹 Volumes
+
+docker volume create [nom]
+Crée un volume nommé pour stocker des données persistantes.
+
+docker volume ls
+Liste tous les volumes existants.
+
+docker volume inspect [nom]
+Affiche les détails d’un volume (chemin, utilisation…).
+
+
+🔹 Réseaux
+
+docker network ls
+Liste les réseaux Docker disponibles.
+
+docker network inspect [nom]
+Affiche les détails d’un réseau (type, conteneurs connectés…).
+
+docker network create --driver overlay [nom]
+Crée un réseau overlay, utilisé pour connecter des services dans un cluster Swarm.
+
+
+
+Jour 3 – Docker Compose
+
+docker-compose up -d
+Lance les services définis dans le fichier docker-compose.yml en arrière-plan.
+
+docker-compose down
+Arrête et supprime les conteneurs, réseaux et volumes créés par Compose.
+
+docker-compose exec [service] [commande]
+Exécute une commande dans un conteneur d’un service donné.
+
+docker-compose logs
+Affiche les logs des services gérés par Compose.
+
+docker-compose build
+Construit les images définies dans le fichier docker-compose.yml.
+
+docker-compose ps
+Liste les conteneurs en cours d’exécution via Compose.
+
+docker-compose config
+Valide et affiche la configuration complète du fichier docker-compose.yml.
+
+
+
+Jour 4 – Docker Swarm & Stack
+
+docker swarm init
+Initialise un cluster Swarm sur le nœud actuel.
+
+docker node ls
+Liste les nœuds du cluster Swarm.
+
+docker service create ...
+Crée un service dans le cluster Swarm (avec options comme image, ports, réplication…).
+
+docker stack deploy -c [fichier.yml] [nom]
+Déploie une application multi-service définie dans un fichier YAML via une stack.
+
+
+
+
+
+Conclusion
+
+Ces commandes constituent la base pour travailler efficacement avec Docker. Elles permettent de manipuler les conteneurs, les images, les volumes, les réseaux et les services. En les combinant avec Docker Compose et Docker Swarm, vous pouvez orchestrer des applications complexes et distribuées. N'hésitez pas à expérimenter dans un environnement de test pour bien comprendre leur fonctionnement.
